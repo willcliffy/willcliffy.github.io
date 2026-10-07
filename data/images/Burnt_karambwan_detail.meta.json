@@ -1,0 +1,95 @@
+{
+  "item": {
+    "page_name": "Burnt karambwan",
+    "default_version": "",
+    "release_date": "14 September 2004",
+    "examine": "Burnt octopus.",
+    "item_id": [
+      "3148"
+    ],
+    "tradeable": "",
+    "value": 1,
+    "image": [
+      "File:Burnt karambwan.png"
+    ],
+    "is_members_only": "",
+    "weight": 0.6,
+    "page_name_sub": "Burnt karambwan",
+    "high_alchemy_value": 0,
+    "quest": "No",
+    "item_name": "Burnt karambwan"
+  },
+  "file_title": "File:Burnt karambwan detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Burnt_karambwan_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Burnt_karambwan_detail.png?e908c",
+    "width": 1510,
+    "height": 1412,
+    "size_bytes": 127559,
+    "sha1": "e53a075854b3f63f9ce97e532b8f8a7ede623163",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T19:28:09Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Burnt_karambwan_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Burnt_karambwan_detail.png?e908c",
+    "is_thumbnail": false,
+    "width": 1510,
+    "height": 1412,
+    "size_bytes": 127559,
+    "png_width": 1510,
+    "png_height": 1412,
+    "sha1": "e53a075854b3f63f9ce97e532b8f8a7ede623163",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "79a4e0c56522b21312de89ea82554e3e96886916a8bccc23fcd08ea435fadf22",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:37:53 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "127559",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 05:09:45 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "b0032a0a92181b7e5f671b92e3aea6b8",
+      "x-server": "nginx-7bf89bd8d7-crg5m",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Server-Timing": "cfEdge;dur=238,cfOrigin;dur=0",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692ee6a9c30c7d-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T19:28:09Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Burnt karambwan detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3ABurnt+karambwan+detail.png%7CFile%3ABurnt+karambwan.png",
+  "imageinfo_response_path": "data/images/Burnt_karambwan_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:37:50.458179+00:00",
+  "file_fetched_at": "2026-10-07T01:37:53.991141+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Burnt_karambwan_detail.png). © Jagex Ltd."
+}

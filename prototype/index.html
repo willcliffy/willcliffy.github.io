@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSRS Item Guesser</title>
+<style>
+  :root {
+    --bg: #1f1b16;
+    --panel: #2b251e;
+    --panel-2: #362e25;
+    --line: #4a4033;
+    --text: #efe6d4;
+    --muted: #a99c84;
+    --accent: #e0b84c;
+    --good: #5fae5a;
+    --mid: #d9a441;
+    --bad: #b5533c;
+    --canvas-bg: #4b4236;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 560px; margin: 0 auto; padding: 16px; }
+  header { text-align: center; margin-bottom: 12px; }
+  h1 { margin: 0; font-size: 1.6rem; color: var(--accent); letter-spacing: .02em; }
+  .sub { color: var(--muted); font-size: .9rem; }
+
+  .board { position: relative; }
+  canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    border: 2px solid var(--line);
+    background: var(--canvas-bg);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  canvas.locked { cursor: default; }
+
+  .status {
+    margin: 12px 0 8px;
+    text-align: center;
+    min-height: 1.4em;
+    color: var(--muted);
+  }
+  .status strong { color: var(--text); }
+
+  .guess-box { position: relative; display: flex; gap: 8px; }
+  .guess-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .guess-box input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .guess-box input:disabled { opacity: .45; cursor: not-allowed; }
+  button {
+    padding: 10px 16px;
+    font: inherit;
+    font-weight: 600;
+    color: #1f1b16;
+    background: var(--accent);
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button:disabled { background: var(--line); color: var(--muted); cursor: not-allowed; }
+  button.secondary { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); }
+
+  .suggestions {
+    position: absolute;
+    left: 0; right: 0; top: 100%;
+    z-index: 5;
+    margin: 4px 0 0;
+    padding: 4px 0;
+    list-style: none;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .suggestions:empty { display: none; }
+  .suggestions li { padding: 6px 12px; cursor: pointer; }
+  .suggestions li.active, .suggestions li:hover { background: var(--panel-2); color: var(--accent); }
+
+  .guesses { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
+  .guess {
+    padding: 10px 12px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+  .guess-top { display: flex; justify-content: space-between; gap: 8px; }
+  .guess-name { font-weight: 600; overflow-wrap: anywhere; }
+  .guess-pct { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .bar { height: 8px; margin: 6px 0; background: var(--panel-2); border-radius: 4px; overflow: hidden; }
+  .bar > div { height: 100%; border-radius: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font-size: .78rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--panel-2);
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+  .chip.yes { color: #d6f0d2; border-color: var(--good); }
+  .chip.no { color: #f3d0c6; border-color: var(--bad); }
+
+  dialog.result {
+    width: min(92vw, 400px);
+    padding: 20px 18px 18px;
+    text-align: center;
+    color: var(--text);
+    background: var(--panel);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  }
+  dialog.result::backdrop { background: rgba(10,8,6,.75); }
+  dialog.result.won { border-color: var(--good); }
+  dialog.result.lost { border-color: var(--bad); }
+  .result .badge { font-size: 2.6rem; line-height: 1; }
+  .result h2 { margin: 6px 0 2px; font-size: 1.5rem; }
+  .result.won h2 { color: var(--good); }
+  .result.lost h2 { color: var(--bad); }
+  .result img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin: 12px auto;
+    padding: 8px;
+    background: var(--canvas-bg);
+    border-radius: 8px;
+  }
+  .result pre { margin: 10px 0 14px; font: inherit; white-space: pre-wrap; }
+  .result .actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .result a { color: var(--accent); }
+  .reopen { display: block; margin: 16px auto 0; }
+  [hidden] { display: none !important; }
+
+  details.settings {
+    margin-top: 20px;
+    padding: 10px 12px;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    font-size: .9rem;
+  }
+  details.settings summary { cursor: pointer; }
+  .settings label { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 8px; }
+  .settings input[type=date] { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; color-scheme: dark; }
+  .settings select { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
+
+  footer { margin-top: 24px; color: var(--muted); font-size: .75rem; text-align: center; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>OSRS Item Guesser</h1>
+    <div class="sub"><span id="puzzle-label"></span> · Reveal a tile, then guess the item. 6 guesses.</div>
+  </header>
+
+  <div class="board">
+    <canvas id="board" width="600" height="600" aria-label="Blurred item image; click a tile to reveal it"></canvas>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <form class="guess-box" id="guess-form" autocomplete="off">
+    <input id="guess-input" type="text" placeholder="Type an item name…" aria-label="Item name"
+           role="combobox" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false">
+    <button id="guess-btn" type="submit">Guess</button>
+    <ul class="suggestions" id="suggestions" role="listbox"></ul>
+  </form>
+
+  <ol class="guesses" id="guesses"></ol>
+
+  <button id="reopen-btn" type="button" class="secondary reopen" hidden>Show result</button>
+
+  <dialog class="result" id="result" aria-labelledby="result-title">
+    <div class="badge" id="result-badge" aria-hidden="true"></div>
+    <h2 id="result-title"></h2>
+    <img id="result-img" alt="">
+    <div id="result-answer"></div>
+    <pre id="share-text"></pre>
+    <div class="actions">
+      <button id="copy-btn" type="button">Copy result</button>
+      <button id="restart-btn" type="button" class="secondary">Play again</button>
+      <button id="close-btn" type="button" class="secondary">View board</button>
+    </div>
+  </dialog>
+
+  <details class="settings">
+    <summary>Prototype settings</summary>
+    <label>Grid size
+      <select id="grid-select">
+        <option value="8">8 × 8</option>
+        <option value="10" selected>10 × 10</option>
+        <option value="12">12 × 12</option>
+        <option value="14">14 × 14</option>
+      </select>
+    </label>
+    <label>Blur strength
+      <select id="blur-select">
+        <option value="8">Light</option>
+        <option value="5">Medium</option>
+        <option value="4" selected>Heavy</option>
+        <option value="3">Brutal</option>
+      </select>
+    </label>
+    <label>Puzzle date
+      <input type="date" id="date-input">
+    </label>
+    <label>Must reveal before each guess
+      <select id="strict-select">
+        <option value="1" selected>Yes</option>
+        <option value="0">No</option>
+      </select>
+    </label>
+    <div style="margin-top:8px">Changing a setting restarts the round.</div>
+  </details>
+
+  <footer>
+    Created using intellectual property belonging to Jagex Limited under the terms of Jagex's Fan Content Policy.
+    This content is not endorsed by or affiliated with Jagex.<br>
+    Item data and images from the <a href="https://oldschool.runescape.wiki">Old School RuneScape Wiki</a>
+    (<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>; images © Jagex Ltd.).
+  </footer>
+</main>
+
+<script src="items.js"></script>
+<!-- Optional: generated by scripts/pick_schedule.py --write. Without it, the demo puzzle is used. -->
+<script src="schedule.js"></script>
+<script>
+// ---- Today's puzzle ----
+// The schedule is keyed by the player's local date. ?date=YYYY-MM-DD overrides it for testing.
+const DEMO_PUZZLE = {
+  answer: "Clue scroll (master)",
+  image: "../data/images/Clue_scroll_(master)_detail.png",
+  source: "https://oldschool.runescape.wiki/w/File:Clue_scroll_(master)_detail.png",
+};
+const SCHEDULE = window.SCHEDULE || [];
+const MAX_GUESSES = 6;
+
+function localISODate(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+const dateParam = new URLSearchParams(location.search).get("date");
+const puzzleDate = /^\d{4}-\d{2}-\d{2}$/.test(dateParam || "") ? dateParam : localISODate();
+const dayIndex = SCHEDULE.findIndex(p => p.date === puzzleDate);
+const PUZZLE = dayIndex >= 0 ? SCHEDULE[dayIndex] : DEMO_PUZZLE;
+// Puzzle numbers count from the first scheduled day.
+const puzzleLabel = dayIndex >= 0
+  ? `#${dayIndex + 1} · ${new Date(puzzleDate + "T00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`
+  : SCHEDULE.length ? `Demo puzzle (nothing scheduled for ${puzzleDate})` : "Demo puzzle";
+
+const ITEMS = window.ITEMS || [];
+const byName = new Map(ITEMS.map(it => [it.n.toLowerCase(), it]));
+const nameWords = ITEMS.map(it => words(it.n));
+const answer = byName.get(PUZZLE.answer.toLowerCase());
+
+// ---- DOM ----
+const $ = id => document.getElementById(id);
+const canvas = $("board"), ctx = canvas.getContext("2d");
+const statusEl = $("status"), input = $("guess-input"), guessBtn = $("guess-btn");
+const sugEl = $("suggestions"), guessesEl = $("guesses");
+
+// ---- State ----
+let grid, blurWidth, strict, state;
+const img = new Image();
+const small = document.createElement("canvas");
+let fit = null; // where the image sits inside the square canvas
+
+function newRound() {
+  grid = +$("grid-select").value;
+  blurWidth = +$("blur-select").value;
+  strict = $("strict-select").value === "1";
+  state = { revealed: new Set(), guesses: [], pendingReveal: true, over: false, won: false };
+  guessesEl.innerHTML = "";
+  if ($("result").open) $("result").close();
+  $("reopen-btn").hidden = true;
+  input.value = "";
+  closeSuggestions();
+  prepareBlur();
+  draw();
+  update();
+}
+
+// ---- Rendering ----
+function layoutImage() {
+  const W = canvas.width, pad = W * 0.06;
+  const scale = Math.min((W - 2 * pad) / img.naturalWidth, (W - 2 * pad) / img.naturalHeight);
+  const w = img.naturalWidth * scale, h = img.naturalHeight * scale;
+  fit = { x: (W - w) / 2, y: (W - h) / 2, w, h };
+}
+
+// Blur by drawing the whole board at a tiny size, then scaling it back up with smoothing.
+function prepareBlur() {
+  if (!img.naturalWidth) return;
+  small.width = blurWidth;
+  small.height = blurWidth;
+  const s = small.getContext("2d");
+  s.imageSmoothingEnabled = true;
+  s.imageSmoothingQuality = "high";
+  s.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--canvas-bg").trim();
+  s.fillRect(0, 0, blurWidth, blurWidth);
+  const k = blurWidth / canvas.width;
+  s.drawImage(img, fit.x * k, fit.y * k, fit.w * k, fit.h * k);
+}
+
+function draw(hoverTile = -1) {
+  const W = canvas.width, t = W / grid;
+  const bg = getComputedStyle(document.documentElement).getPropertyValue("--canvas-bg").trim();
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, W);
+  if (!img.naturalWidth) return;
+
+  const fullyRevealed = state.over;
+  if (fullyRevealed) {
+    ctx.drawImage(img, fit.x, fit.y, fit.w, fit.h);
+  } else {
+    ctx.drawImage(small, 0, 0, W, W);
+    for (const i of state.revealed) {
+      const x = (i % grid) * t, y = Math.floor(i / grid) * t;
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x, y, t, t);
+      ctx.clip();
+      ctx.fillStyle = bg;
+      ctx.fillRect(x, y, t, t);
+      ctx.drawImage(img, fit.x, fit.y, fit.w, fit.h);
+      ctx.restore();
+    }
+  }
+
+  // Grid lines, and a highlight on the tile under the cursor.
+  ctx.strokeStyle = "rgba(0,0,0,.35)";
+  ctx.lineWidth = 2;
+  for (let i = 1; i < grid; i++) {
+    ctx.beginPath(); ctx.moveTo(i * t, 0); ctx.lineTo(i * t, W); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, i * t); ctx.lineTo(W, i * t); ctx.stroke();
+  }
+  if (!fullyRevealed) {
+    for (const i of state.revealed) {
+      ctx.strokeStyle = "rgba(224,184,76,.8)";
+      ctx.strokeRect((i % grid) * t + 1, Math.floor(i / grid) * t + 1, t - 2, t - 2);
+    }
+    if (hoverTile >= 0 && canReveal() && !state.revealed.has(hoverTile)) {
+      ctx.fillStyle = "rgba(255,255,255,.12)";
+      ctx.fillRect((hoverTile % grid) * t, Math.floor(hoverTile / grid) * t, t, t);
+    }
+  }
+}
+
+function tileAt(ev) {
+  const r = canvas.getBoundingClientRect();
+  const x = Math.floor(((ev.clientX - r.left) / r.width) * grid);
+  const y = Math.floor(((ev.clientY - r.top) / r.height) * grid);
+  if (x < 0 || y < 0 || x >= grid || y >= grid) return -1;
+  return y * grid + x;
+}
+
+// ---- Turn logic ----
+function canReveal() {
+  return !state.over && state.pendingReveal && state.revealed.size < grid * grid;
+}
+
+canvas.addEventListener("pointermove", ev => draw(tileAt(ev)));
+canvas.addEventListener("pointerleave", () => draw());
+canvas.addEventListener("click", ev => {
+  const i = tileAt(ev);
+  if (i < 0 || !canReveal() || state.revealed.has(i)) return;
+  state.revealed.add(i);
+  state.pendingReveal = false;
+  draw(i);
+  update();
+  input.focus();
+});
+
+function update() {
+  const n = state.guesses.length + 1;
+  canvas.classList.toggle("locked", !canReveal());
+  if (!answer) {
+    statusEl.textContent = `Answer "${PUZZLE.answer}" not found in items.js.`;
+  } else if (state.over) {
+    statusEl.textContent = "";
+  } else if (state.pendingReveal && strict) {
+    statusEl.innerHTML = `Guess <strong>${n}/${MAX_GUESSES}</strong>: click a tile to reveal it.`;
+  } else {
+    statusEl.innerHTML = `Guess <strong>${n}/${MAX_GUESSES}</strong>: what's the item?`;
+  }
+  const blocked = state.over || (strict && state.pendingReveal);
+  input.disabled = blocked;
+  input.placeholder = blocked && !state.over ? "Reveal a tile first…" : "Type an item name…";
+  guessBtn.disabled = blocked;
+  if (blocked) closeSuggestions();
+}
+
+$("guess-form").addEventListener("submit", ev => {
+  ev.preventDefault();
+  if (activeIdx >= 0 && sugEl.children[activeIdx]) input.value = sugEl.children[activeIdx].textContent;
+  else if (!byName.has(input.value.trim().toLowerCase()) && sugEl.children[0]) input.value = sugEl.children[0].textContent;
+  submitGuess(input.value.trim());
+});
+
+function submitGuess(text) {
+  if (state.over || (strict && state.pendingReveal) || !text) return;
+  const item = byName.get(text.toLowerCase());
+  if (!item) { flash(`"${text}" isn't an item we know. Pick one from the list.`); return; }
+  if (state.guesses.some(g => g.item === item)) { flash(`You already guessed ${item.n}.`); return; }
+
+  const g = grade(item, answer);
+  state.guesses.push(g);
+  renderGuess(g);
+  input.value = "";
+  closeSuggestions();
+
+  if (item === answer) {
+    state.over = true; state.won = true;
+  } else if (state.guesses.length >= MAX_GUESSES) {
+    state.over = true;
+  } else {
+    state.pendingReveal = true;
+  }
+  draw();
+  update();
+  if (state.over) showResult();
+}
+
+function flash(msg) {
+  statusEl.textContent = msg;
+  setTimeout(update, 2200);
+}
+
+// ---- Grading ----
+// A weighted similarity, 0-100. Weights are a first guess and meant to be tuned.
+function tokens(name) {
+  return new Set(name.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
+}
+function closeness(a, b, span) { // 1 when equal, falling linearly to 0 at `span` apart
+  if (a == null || b == null) return 0.5;
+  return Math.max(0, 1 - Math.abs(a - b) / span);
+}
+function logv(v) { return Math.log10((v || 0) + 1); }
+
+function grade(item, ans) {
+  if (item === ans) return { item, pct: 100, hints: hints(item, ans) };
+  const ta = tokens(item.n), tb = tokens(ans.n);
+  const shared = [...ta].filter(t => tb.has(t)).length;
+  const jaccard = shared / (ta.size + tb.size - shared);
+  const parts = [
+    [30, jaccard],
+    [15, item.s === ans.s ? 1 : 0],
+    [10, item.m === ans.m ? 1 : 0],
+    [15, closeness(item.y, ans.y, 10)],
+    [15, closeness(logv(item.v), logv(ans.v), 4)],
+    [5, closeness(logv(item.w), logv(ans.w), 1.5)],
+    [5, item.q === ans.q ? 1 : 0],
+    [5, item.t === ans.t ? 1 : 0],
+  ];
+  // Cap below 100 so only the exact answer shows a full bar.
+  const pct = Math.min(99, Math.round(parts.reduce((sum, [w, s]) => sum + w * s, 0)));
+  return { item, pct, hints: hints(item, ans) };
+}
+
+function hints(item, ans) {
+  const arrow = (a, b, close) => a == null || b == null ? "?" : close ? "✓" : b > a ? "↑" : "↓";
+  const vClose = item.v != null && ans.v != null && Math.abs(item.v - ans.v) <= 0.1 * Math.max(ans.v, 1);
+  return [
+    { label: `Slot: ${item.s || "none"}`, ok: item.s === ans.s },
+    { label: item.m ? "Members" : "F2P", ok: item.m === ans.m },
+    { label: `Released ${item.y ?? "?"} ${arrow(item.y, ans.y, item.y === ans.y)}`, ok: item.y === ans.y },
+    { label: `Value ${fmt(item.v)} ${arrow(item.v, ans.v, vClose)}`, ok: vClose },
+    { label: item.t ? "Tradeable" : "Untradeable", ok: item.t === ans.t },
+    { label: item.q ? "Quest item" : "Not quest", ok: item.q === ans.q },
+  ];
+}
+function fmt(v) {
+  if (v == null) return "?";
+  if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1) + "m";
+  if (v >= 1e3) return (v / 1e3).toFixed(v >= 1e4 ? 0 : 1) + "k";
+  return String(v);
+}
+function color(pct) {
+  return pct === 100 ? "var(--good)" : pct >= 60 ? "var(--mid)" : "var(--bad)";
+}
+
+function renderGuess(g) {
+  const li = document.createElement("li");
+  li.className = "guess";
+  li.innerHTML = `
+    <div class="guess-top"><span class="guess-name"></span><span class="guess-pct">${g.pct}%</span></div>
+    <div class="bar"><div style="width:${g.pct}%;background:${color(g.pct)}"></div></div>
+    <div class="chips">${g.hints.map(h => `<span class="chip ${h.ok ? "yes" : "no"}"></span>`).join("")}</div>`;
+  li.querySelector(".guess-name").textContent = g.item.n;
+  li.querySelectorAll(".chip").forEach((el, i) => { el.textContent = g.hints[i].label; });
+  guessesEl.prepend(li);
+}
+
+function showResult() {
+  const n = state.guesses.length;
+  const dlg = $("result");
+  dlg.classList.toggle("won", state.won);
+  dlg.classList.toggle("lost", !state.won);
+  $("result-badge").textContent = state.won ? "🎉" : "💀";
+  $("result-title").textContent = state.won
+    ? `You got it in ${n} ${n === 1 ? "guess" : "guesses"}!`
+    : "Out of guesses";
+  $("result-img").src = PUZZLE.image;
+  $("result-img").alt = answer.n;
+  const ans = $("result-answer");
+  ans.innerHTML = `The item was <strong></strong> · <a target="_blank" rel="noopener">wiki</a>`;
+  ans.querySelector("strong").textContent = answer.n;
+  ans.querySelector("a").href = PUZZLE.source;
+  const squares = state.guesses.map(g => g.pct === 100 ? "🟩" : g.pct >= 60 ? "🟨" : "🟥").join("");
+  $("share-text").textContent =
+    `OSRS Item Guesser ${dayIndex >= 0 ? `#${dayIndex + 1} ` : ""}${state.won ? n : "X"}/${MAX_GUESSES}\n` +
+    `${squares}\n🔍 ${state.revealed.size} tile${state.revealed.size === 1 ? "" : "s"} revealed`;
+  $("reopen-btn").hidden = false;
+  // Short pause so the player sees the board fully reveal before the modal covers it.
+  setTimeout(() => { if (state.over && !dlg.open) dlg.showModal(); }, 600);
+}
+
+$("copy-btn").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText($("share-text").textContent);
+    $("copy-btn").textContent = "Copied!";
+  } catch {
+    $("copy-btn").textContent = "Copy failed";
+  }
+  setTimeout(() => { $("copy-btn").textContent = "Copy result"; }, 1500);
+});
+$("restart-btn").addEventListener("click", newRound);
+$("close-btn").addEventListener("click", () => $("result").close());
+$("reopen-btn").addEventListener("click", () => $("result").showModal());
+["grid-select", "blur-select", "strict-select"].forEach(id => $(id).addEventListener("change", newRound));
+
+// ---- Search ----
+// Word-based fuzzy match: every typed word must match the start of some word in the name,
+// in any order. If that finds too few items, a second pass allows one typo in words of
+// 4+ letters (first letter must still match, which also keeps it fast). "master clue" finds
+// "Clue scroll (master)"; "abysal wh" finds "Abyssal whip".
+function words(s) {
+  return s.toLowerCase().replace(/['’]/g, "").split(/[^a-z0-9]+/).filter(Boolean);
+}
+function editDistance(a, b) {
+  const row = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = row[j];
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = tmp;
+    }
+  }
+  return row[b.length];
+}
+function wordScore(q, w, typos) {
+  if (w === q) return 3;
+  if (w.startsWith(q)) return 2;
+  if (typos && q.length >= 4 && w[0] === q[0]) {
+    for (const len of [q.length - 1, q.length, q.length + 1]) {
+      if (len <= w.length && editDistance(q, w.slice(0, len)) <= 1) return 1;
+    }
+  }
+  return 0;
+}
+function searchItems(query, limit) {
+  const hits = searchPass(words(query), false);
+  if (hits.length < limit) {
+    const seen = new Set(hits.map(h => h[2]));
+    hits.push(...searchPass(words(query), true).filter(h => !seen.has(h[2])));
+  }
+  return hits.slice(0, limit).map(h => h[2]);
+}
+function searchPass(qs, typos) {
+  if (!qs.length) return [];
+  const joined = qs.join(" ");
+  const hits = [];
+  for (let i = 0; i < ITEMS.length; i++) {
+    const ws = nameWords[i];
+    let score = 0;
+    for (const q of qs) {
+      let best = 0;
+      for (const w of ws) { const sc = wordScore(q, w, typos); if (sc > best) best = sc; if (best === 3) break; }
+      if (!best) { score = -1; break; }
+      score += best;
+    }
+    if (score < 0) continue;
+    const name = ws.join(" ");
+    if (name === joined) score += 10;
+    else if (name.startsWith(joined)) score += 3;
+    hits.push([score, ws.length, i]);
+  }
+  // Best score first, then shorter names, then alphabetical (ITEMS is pre-sorted).
+  return hits.sort((a, b) => b[0] - a[0] || a[1] - b[1] || a[2] - b[2]);
+}
+
+// ---- Autocomplete ----
+let activeIdx = -1;
+function closeSuggestions() {
+  sugEl.innerHTML = "";
+  activeIdx = -1;
+  input.setAttribute("aria-expanded", "false");
+}
+function suggest(q) {
+  closeSuggestions();
+  if (q.trim().length < 2) return;
+  for (const i of searchItems(q, 10)) {
+    const li = document.createElement("li");
+    li.textContent = ITEMS[i].n;
+    li.setAttribute("role", "option");
+    li.addEventListener("mousedown", ev => {
+      ev.preventDefault();
+      input.value = ITEMS[i].n;
+      closeSuggestions();
+      submitGuess(input.value);
+    });
+    sugEl.appendChild(li);
+  }
+  input.setAttribute("aria-expanded", String(sugEl.children.length > 0));
+}
+function setActive(i) {
+  const items = sugEl.children;
+  if (!items.length) return;
+  activeIdx = (i + items.length) % items.length;
+  [...items].forEach((el, j) => el.classList.toggle("active", j === activeIdx));
+  items[activeIdx].scrollIntoView({ block: "nearest" });
+}
+input.addEventListener("input", () => suggest(input.value));
+input.addEventListener("keydown", ev => {
+  if (ev.key === "ArrowDown") { ev.preventDefault(); setActive(activeIdx + 1); }
+  else if (ev.key === "ArrowUp") { ev.preventDefault(); setActive(activeIdx - 1); }
+  else if (ev.key === "Escape") closeSuggestions();
+});
+input.addEventListener("blur", () => setTimeout(closeSuggestions, 100));
+
+// ---- Start ----
+img.onload = () => { layoutImage(); newRound(); };
+img.onerror = () => { statusEl.textContent = `Couldn't load ${PUZZLE.image}`; };
+img.src = PUZZLE.image;
+$("puzzle-label").textContent = puzzleLabel;
+$("date-input").value = puzzleDate;
+$("date-input").addEventListener("change", ev => {
+  if (!ev.target.value) return;
+  const url = new URL(location.href);
+  url.searchParams.set("date", ev.target.value);
+  location.href = url;
+});
+newRound();
+</script>
+</body>
+</html>

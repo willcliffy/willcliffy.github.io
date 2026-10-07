@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 61868,
+        "ns": 6,
+        "title": "File:Burnt karambwan.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T14:54:08Z",
+            "user": "Hlwys",
+            "size": 569,
+            "width": 31,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Burnt_karambwan.png?56d17",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Burnt_karambwan.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=61868",
+            "sha1": "01a334abd9b47f397b1eeaf5e6f4d7c68395354d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T14:54:08Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Burnt karambwan",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 114658,
+        "ns": 6,
+        "title": "File:Burnt karambwan detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T19:28:09Z",
+            "user": "Hlwys",
+            "size": 127559,
+            "width": 1510,
+            "height": 1412,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Burnt_karambwan_detail.png?e908c",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Burnt_karambwan_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=114658",
+            "sha1": "e53a075854b3f63f9ce97e532b8f8a7ede623163",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T19:28:09Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Burnt karambwan detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

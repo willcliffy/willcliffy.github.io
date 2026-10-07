@@ -1,0 +1,93 @@
+{
+  "item": {
+    "page_name": "Twisted steel trophy",
+    "release_date": "16 January 2020",
+    "examine": "A Steel trophy for competing in Leagues I - Twisted (14th Nov 2019 to 16th Jan 2020).",
+    "item_id": [
+      "24380"
+    ],
+    "default_version": "",
+    "image": [
+      "File:Twisted steel trophy.png"
+    ],
+    "is_members_only": "",
+    "weight": 1,
+    "item_name": "Twisted steel trophy",
+    "value": 1,
+    "quest": "No",
+    "page_name_sub": "Twisted steel trophy"
+  },
+  "file_title": "File:Twisted steel trophy detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Twisted_steel_trophy_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Twisted_steel_trophy_detail.png?ae035",
+    "width": 960,
+    "height": 1536,
+    "size_bytes": 86258,
+    "sha1": "509c0a4dbab28002c1f1d5d5db9433a43d0f7cd7",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T23:51:03Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Twisted_steel_trophy_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Twisted_steel_trophy_detail.png?ae035",
+    "is_thumbnail": false,
+    "width": 960,
+    "height": 1536,
+    "size_bytes": 86258,
+    "png_width": 960,
+    "png_height": 1536,
+    "sha1": "509c0a4dbab28002c1f1d5d5db9433a43d0f7cd7",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "4d37f72230b50e1c8899c93d85d86780b8fc8f61f99c8b44339dddbb9e7a0c0e",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:07 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "86258",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 04:56:19 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "2267560f1846d9367477d18877a078d8",
+      "x-server": "nginx-7bf89bd8d7-crg5m",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Server-Timing": "cfEdge;dur=193,cfOrigin;dur=0",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692f3beb1177e4-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T23:51:03Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Twisted steel trophy detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3ATwisted+steel+trophy+detail.png%7CFile%3ATwisted+steel+trophy.png",
+  "imageinfo_response_path": "data/images/Twisted_steel_trophy_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:38:04.122347+00:00",
+  "file_fetched_at": "2026-10-07T01:38:07.566134+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Twisted_steel_trophy_detail.png). © Jagex Ltd."
+}

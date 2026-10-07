@@ -1,0 +1,95 @@
+{
+  "item": {
+    "page_name": "Clue scroll (master) - 19.43N 23.11W",
+    "release_date": "6 July 2016",
+    "examine": "Perhaps someone at the observatory can teach me to navigate?",
+    "default_version": "",
+    "value": 20,
+    "image": [
+      "File:Clue scroll (master).png"
+    ],
+    "is_members_only": "",
+    "weight": 0.02,
+    "page_name_sub": "Clue scroll (master) - 19.43N 23.11W",
+    "high_alchemy_value": 12,
+    "quest": "No",
+    "item_name": "Clue scroll (master)"
+  },
+  "file_title": "File:Clue scroll (master) detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Clue_scroll_(master)_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Clue_scroll_%28master%29_detail.png?f3c22",
+    "width": 1497,
+    "height": 1420,
+    "size_bytes": 110422,
+    "sha1": "816cf53bd2207cde6310badfbc9d09d5d365e9d3",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T19:28:52Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Clue_scroll_(master)_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Clue_scroll_%28master%29_detail.png?f3c22",
+    "is_thumbnail": false,
+    "width": 1497,
+    "height": 1420,
+    "size_bytes": 34699,
+    "png_width": 1497,
+    "png_height": 1420,
+    "sha1": "8c400b8c90cdd90e5bc80502101a5af7e172a630",
+    "sha1_matches_wiki": false,
+    "verification": {
+      "dimensions": true,
+      "cdn_orig_size": true
+    },
+    "verified": true,
+    "sha256": "b49a407304cd75b0308537d26abcf5df7db241a61f03492c9d2634f83215b96a",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 00:22:25 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "34699",
+      "Connection": "close",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 05:08:41 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "2df392357988528fcb8e8b4c3f0df586",
+      "x-server": "nginx-5786f46c59-5swll",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "X-Content-Type-Options": "nosniff",
+      "priority": "u=4;i=?0,cf-chb=(37;u=2;i=?0 451;u=5;i=?0)",
+      "cf-polished": "ok, orig_size=110422",
+      "cf-bgj": "h2pri,imgq:100,csam-hash",
+      "vary": "accept, accept-encoding",
+      "Accept-Ranges": "bytes",
+      "Age": "26551436",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "Server-Timing": "cfEdge;dur=5,cfOrigin;dur=0",
+      "Server": "cloudflare",
+      "CF-RAY": "a468c0594c6fc1a2-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T19:28:52Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Clue scroll (master) detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3AClue+scroll+%28master%29+detail.png%7CFile%3AClue+scroll+%28master%29.png",
+  "imageinfo_response_path": "data/images/Clue_scroll_(master)_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T00:22:22.238143+00:00",
+  "file_fetched_at": "2026-10-07T00:22:25.499518+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Clue_scroll_(master)_detail.png). © Jagex Ltd."
+}

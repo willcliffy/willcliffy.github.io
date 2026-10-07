@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 15178,
+        "ns": 6,
+        "title": "File:Bronze battleaxe.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T14:54:00Z",
+            "user": "Hlwys",
+            "size": 400,
+            "width": 22,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Bronze_battleaxe.png?bd75b",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Bronze_battleaxe.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=15178",
+            "sha1": "95b2ca3536f057786588a3c665e7fdcd61065dea",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T14:54:00Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bronze battleaxe",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 115654,
+        "ns": 6,
+        "title": "File:Bronze battleaxe detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T19:10:21Z",
+            "user": "Hlwys",
+            "size": 53579,
+            "width": 1044,
+            "height": 1432,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Bronze_battleaxe_detail.png?d87c1",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Bronze_battleaxe_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=115654",
+            "sha1": "f6786d0127f3cdfe4f47298482783ecbe57c1f40",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T19:10:21Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bronze battleaxe detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

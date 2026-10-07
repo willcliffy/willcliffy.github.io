@@ -1,0 +1,98 @@
+{
+  "item": {
+    "page_name": "Bronze battleaxe",
+    "default_version": "",
+    "release_date": "4 January 2001",
+    "examine": "A vicious looking axe.",
+    "item_id": [
+      "1375"
+    ],
+    "tradeable": "",
+    "buy_limit": 125,
+    "value": 52,
+    "image": [
+      "File:Bronze battleaxe.png"
+    ],
+    "weight": 2.721,
+    "page_name_sub": "Bronze battleaxe",
+    "high_alchemy_value": 31,
+    "quest": "No",
+    "item_name": "Bronze battleaxe"
+  },
+  "file_title": "File:Bronze battleaxe detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Bronze_battleaxe_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Bronze_battleaxe_detail.png?d87c1",
+    "width": 1044,
+    "height": 1432,
+    "size_bytes": 53579,
+    "sha1": "f6786d0127f3cdfe4f47298482783ecbe57c1f40",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T19:10:21Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Bronze_battleaxe_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Bronze_battleaxe_detail.png?d87c1",
+    "is_thumbnail": false,
+    "width": 1044,
+    "height": 1432,
+    "size_bytes": 15572,
+    "png_width": 1044,
+    "png_height": 1432,
+    "sha1": "e36e60c43dfc8db851b402dabbaa04cd9d382a06",
+    "sha1_matches_wiki": false,
+    "verification": {
+      "dimensions": true,
+      "cdn_orig_size": true
+    },
+    "verified": true,
+    "sha256": "d8aabaf46db6100363e13cd85b8be396de8ea5b4675081bfe188f5ce495587e7",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:27 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "15572",
+      "Connection": "close",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 05:06:46 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "42d617f2371629cee77e7dd423d2120b",
+      "x-server": "nginx-65d658f58c-gzmp9",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "priority": "u=4;i=?0,cf-chb=(37;u=2;i=?0 184;u=5;i=?0)",
+      "cf-polished": "ok, orig_size=53579",
+      "X-Content-Type-Options": "nosniff",
+      "cf-bgj": "imgq:100,csam-hash,h2pri",
+      "vary": "accept, accept-encoding",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "Server-Timing": "cfEdge;dur=94,cfOrigin;dur=0",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692fb8fdf6a8bf-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T19:10:21Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Bronze battleaxe detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3ABronze+battleaxe+detail.png%7CFile%3ABronze+battleaxe.png",
+  "imageinfo_response_path": "data/images/Bronze_battleaxe_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:38:24.100311+00:00",
+  "file_fetched_at": "2026-10-07T01:38:27.461400+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Bronze_battleaxe_detail.png). © Jagex Ltd."
+}

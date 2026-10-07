@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 589086,
+        "ns": 6,
+        "title": "File:Purplefin detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2025-11-14T04:29:00Z",
+            "user": "Riblet15",
+            "size": 57584,
+            "width": 1511,
+            "height": 1449,
+            "comment": "",
+            "url": "https://oldschool.runescape.wiki/images/Purplefin_detail.png?9272f",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Purplefin_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=589086",
+            "sha1": "d117bb0ab42ea49ff124c2ab37490440adff8f39",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-11-14T04:29:00Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Purplefin detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 613053,
+        "ns": 6,
+        "title": "File:Purplefin.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2025-11-07T20:44:34Z",
+            "user": "1ceviper",
+            "size": 724,
+            "width": 32,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Purplefin.png?afec5",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Purplefin.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=613053",
+            "sha1": "65fe8069bde8595c7e33504bb7c872b30cdbd812",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-11-07T20:44:34Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Purplefin",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

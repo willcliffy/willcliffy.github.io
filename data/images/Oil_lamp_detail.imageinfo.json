@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 36037,
+        "ns": 6,
+        "title": "File:Oil lamp.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T15:02:34Z",
+            "user": "Hlwys",
+            "size": 599,
+            "width": 25,
+            "height": 28,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Oil_lamp.png?769ea",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Oil_lamp.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=36037",
+            "sha1": "fce335e576cb4beed272e2828c40164b48689d5e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T15:02:34Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Oil lamp",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 202007,
+        "ns": 6,
+        "title": "File:Oil lamp detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T22:26:04Z",
+            "user": "Hlwys",
+            "size": 71591,
+            "width": 1187,
+            "height": 1393,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Oil_lamp_detail.png?a369c",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Oil_lamp_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=202007",
+            "sha1": "66930d7b0ea4bb00182bc22ea630d3cbedfc0f46",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T22:26:04Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Oil lamp detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 19306,
+        "ns": 6,
+        "title": "File:Adamant gloves.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T14:51:46Z",
+            "user": "Hlwys",
+            "size": 592,
+            "width": 29,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Adamant_gloves.png?63d9c",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Adamant_gloves.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=19306",
+            "sha1": "36e48d2e01a40b67cd02f65815fdac8479df76a1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T14:51:46Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Adamant gloves",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 66627,
+        "ns": 6,
+        "title": "File:Adamant gloves detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-03-21T03:51:50Z",
+            "user": "Spineweilder",
+            "size": 132148,
+            "width": 1463,
+            "height": 1428,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Adamant_gloves_detail.png?34ecf",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Adamant_gloves_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=66627",
+            "sha1": "fcecc472849e1f1e3dd97da28a8927eeaa569e10",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-03-21T03:51:50Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Adamant gloves detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

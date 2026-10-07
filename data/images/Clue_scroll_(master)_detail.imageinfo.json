@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 214511,
+        "ns": 6,
+        "title": "File:Clue scroll (master).png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T14:54:18Z",
+            "user": "Hlwys",
+            "size": 716,
+            "width": 31,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Clue_scroll_%28master%29.png?09bb0",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Clue_scroll_(master).png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=214511",
+            "sha1": "33d28e58ab700034758c5c1a9775d9260d55f9ea",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T14:54:18Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Clue scroll (master)",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 215095,
+        "ns": 6,
+        "title": "File:Clue scroll (master) detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T19:28:52Z",
+            "user": "Hlwys",
+            "size": 110422,
+            "width": 1497,
+            "height": 1420,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Clue_scroll_%28master%29_detail.png?f3c22",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Clue_scroll_(master)_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=215095",
+            "sha1": "816cf53bd2207cde6310badfbc9d09d5d365e9d3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T19:28:52Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Clue scroll (master) detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

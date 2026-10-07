@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 239350,
+        "ns": 6,
+        "title": "File:Twisted steel trophy.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T15:07:08Z",
+            "user": "Hlwys",
+            "size": 587,
+            "width": 20,
+            "height": 31,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Twisted_steel_trophy.png?08f42",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Twisted_steel_trophy.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=239350",
+            "sha1": "ff3bb763e8c825c59bbf77309fc9df3adb82917a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T15:07:08Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Twisted steel trophy",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 239357,
+        "ns": 6,
+        "title": "File:Twisted steel trophy detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T23:51:03Z",
+            "user": "Hlwys",
+            "size": 86258,
+            "width": 960,
+            "height": 1536,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Twisted_steel_trophy_detail.png?ae035",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Twisted_steel_trophy_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=239357",
+            "sha1": "509c0a4dbab28002c1f1d5d5db9433a43d0f7cd7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T23:51:03Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Twisted steel trophy detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

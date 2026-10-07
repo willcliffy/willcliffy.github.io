@@ -1,0 +1,93 @@
+{
+  "item": {
+    "page_name": "Pressure gauge",
+    "default_version": "",
+    "release_date": "21 January 2001",
+    "examine": "It looks like part of a machine.",
+    "item_id": [
+      "271"
+    ],
+    "value": 1,
+    "image": [
+      "File:Pressure gauge.png"
+    ],
+    "weight": 0.056,
+    "page_name_sub": "Pressure gauge",
+    "high_alchemy_value": 0,
+    "quest": "[[Ernest the Chicken]]",
+    "item_name": "Pressure gauge"
+  },
+  "file_title": "File:Pressure gauge detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Pressure_gauge_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Pressure_gauge_detail.png?8395c",
+    "width": 1315,
+    "height": 1463,
+    "size_bytes": 241355,
+    "sha1": "81304a708aec459beaa6e04ea90527f11c544c10",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T22:26:54Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Pressure_gauge_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Pressure_gauge_detail.png?8395c",
+    "is_thumbnail": false,
+    "width": 1315,
+    "height": 1463,
+    "size_bytes": 241355,
+    "png_width": 1315,
+    "png_height": 1463,
+    "sha1": "81304a708aec459beaa6e04ea90527f11c544c10",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "b4f37cc264f202da62a43df8e86a294693436de7632fce444feccf8efc152da6",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:00 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "241355",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 04:58:08 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "fb56918ab5e1aba119062296f97c7fb3",
+      "x-server": "nginx-5786f46c59-5swll",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Server-Timing": "cfEdge;dur=264,cfOrigin;dur=0",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692f1178464c7a-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T22:26:54Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Pressure gauge detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3APressure+gauge+detail.png%7CFile%3APressure+gauge.png",
+  "imageinfo_response_path": "data/images/Pressure_gauge_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:37:57.159998+00:00",
+  "file_fetched_at": "2026-10-07T01:38:00.954274+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Pressure_gauge_detail.png). © Jagex Ltd."
+}

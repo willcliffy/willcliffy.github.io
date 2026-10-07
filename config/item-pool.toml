@@ -1,0 +1,131 @@
+# Item pool filters: the levers for which items can be a daily answer.
+#
+# Read by scripts/build_pool.py (NOT WRITTEN YET). Nothing consumes this file today.
+# Background, counts and the reasoning behind each default: docs/item-pool-filtering.md
+#
+# Python 3.11+ can read this with the standard-library `tomllib`.
+
+[structural]
+# Rows from data/wiki/infobox_item.json are dropped when these are true.
+drop_missing_item_id = true      # 88 rows have no item_id
+drop_removed = true              # removal_date set (1,080 rows)
+drop_step_pages = true           # page_name contains " - " (per-step clue pages etc., 788 rows)
+one_answer_per_image = true      # 175 images are shared by several names (kegs, port reward bags…)
+require_detail_image = true      # needs the one-time imageinfo lookup; see the doc
+
+# Pages whose page_name ends in one of these "(…)" suffixes are copies or special versions.
+drop_page_suffixes = [
+  "interface item", "unobtainable item", "Last Man Standing", "beta", "historical",
+  "animation item", "PvP Championship", "discontinued",
+]
+
+# ---------------------------------------------------------------------------
+# Variant groups. Matched against trailing "(…)" suffixes on item_name, repeatedly,
+# because suffixes can stack: "Abyssal dagger (bh)(p++)", "Ancient sceptre (l) (broken)".
+# Tags are matched case-insensitively and must match the whole text in the brackets.
+#
+# mode:
+#   "keep"     - the variant is its own answer candidate, graded like any other item.
+#   "exclude"  - never an answer. Still guessable, graded as a different item.
+#   "collapse" - never an answer, and guessing it when the answer is its base item
+#                counts as correct. If the base item doesn't exist (e.g. "Avantoe potion (unf)"
+#                has no "Avantoe potion"), the variant is treated as "keep".
+#
+# `names` = distinct item names carrying the suffix (from the 2026-10-06 dump).
+# ---------------------------------------------------------------------------
+
+[variants.doses_charges]       # Prayer potion(4), Amulet of glory(6), Apples(5), Black mask (10)
+tags = ['\d+']
+mode = "collapse"
+names = 882
+
+[variants.poison]              # Dragon dagger(p++), Adamant spear(kp)
+tags = ['p', 'p\+', 'p\+\+', 'kp']
+mode = "collapse"
+names = 240
+
+[variants.imbued]              # Berserker ring (i), Black mask (i)
+tags = ['i']
+mode = "collapse"
+names = 78
+
+[variants.ornament_kit]        # Abyssal whip (or), Amulet of fury (or): visibly recoloured
+tags = ['or']
+mode = "exclude"
+names = 72
+
+[variants.trimmed]             # Adamant platebody (g) / (t): treasure-trail trims
+tags = ['g', 't']
+mode = "exclude"
+names = 159
+
+[variants.heraldic]            # Adamant helm (h1)…(h5)
+tags = ['h[1-5]']
+mode = "exclude"
+names = 45
+
+[variants.tiered_cosmetic]     # Adventurer's boots (t1)…(t3), Amulet of glory (t1)
+tags = ['t[1-3]']
+mode = "exclude"
+names = 87
+
+[variants.broken_locked]       # Adamant defender (broken) / (l), Elite void robe (l) (mangled)
+tags = ['broken', 'l', 'mangled', 'damaged']
+mode = "collapse"
+names = 226
+
+[variants.charge_state]        # Arclight (inactive), Celestial ring (uncharged), Bullseye lantern (empty),
+tags = ['inactive', 'uncharged', 'empty', 'full', 'u', 'unf', 'lit']   # Bronze crossbow (u), Bronze bolts (unf)
+mode = "collapse"
+names = 196
+
+[variants.game_mode]           # Abyssal dagger (bh), Dark bow (Deadman), Crystal helm (beta), Air rune (nz), Bread (cookout)
+tags = ['bh', 'Deadman', 'beta', 'nz', 'cookout']
+mode = "exclude"
+names = 112
+
+[variants.armour_set_pack]     # Adamant set (lg) / (sk): boxed armour sets
+tags = ['lg', 'sk']
+mode = "exclude"
+names = 58
+
+[variants.clue_tier]           # Clue scroll (hard), Casket (elite): distinct items that look alike
+tags = ['beginner', 'easy', 'medium', 'hard', 'elite', 'master']
+mode = "keep"
+names = 46
+
+[variants.gauntlet_tier]       # Corrupted bow (basic) / (attuned) / (perfected)
+tags = ['basic', 'attuned', 'perfected']
+mode = "collapse"
+names = 38
+
+[variants.tier_n]              # Bounty hunter hat (tier 1)…(tier 5), Archaic emblem (tier 5)
+tags = ['tier \d']
+mode = "collapse"
+names = 57
+
+[variants.ale_maturity]        # Dwarven stout(m), Cider(m1)…(m4)
+tags = ['m', 'm[1-4]']
+mode = "collapse"
+names = 48
+
+[variants.enchanted_bolts]     # Diamond bolts (e); also Catspeak amulet(e), Blisterwood sickle (e)
+tags = ['e']
+mode = "collapse"
+names = 33
+
+[variants.watered_seedling]    # Apple seedling (w)
+tags = ['w']
+mode = "collapse"
+names = 24
+
+[variants.unreviewed]          # Meaning varies per item; review by hand before changing:
+tags = ['c', 'cr', 'o', 'b']   # Blade of Saeldor (c), Dragon claws (cr), Iban's staff (o), Soulreaper axe (o),
+mode = "keep"                  # Dragon hunter crossbow (b)
+names = 64
+
+[notability]
+# Layer 2 (tiers). Inputs and thresholds TBD; see the doc.
+# Candidate volume source: /1h returns hourly volumes for all items in one request
+# (documented endpoints: /latest, /mapping, /5m, /1h, /timeseries). Needs sign-off before use.
+ge_volume_source = "https://prices.runescape.wiki/api/v1/osrs/1h"

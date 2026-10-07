@@ -1,0 +1,97 @@
+{
+  "item": {
+    "page_name": "Oil lamp",
+    "default_version": "",
+    "release_date": "14 March 2005",
+    "examine": "Not the genie sort.",
+    "item_id": [
+      "4522"
+    ],
+    "tradeable": "",
+    "buy_limit": 40,
+    "version_anchor": "Unlit",
+    "value": 28,
+    "image": [
+      "File:Oil lamp.png"
+    ],
+    "is_members_only": "",
+    "weight": 0.453,
+    "page_name_sub": "Oil lamp#Unlit",
+    "high_alchemy_value": 16,
+    "quest": "No",
+    "item_name": "Oil lamp"
+  },
+  "file_title": "File:Oil lamp detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Oil_lamp_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Oil_lamp_detail.png?a369c",
+    "width": 1187,
+    "height": 1393,
+    "size_bytes": 71591,
+    "sha1": "66930d7b0ea4bb00182bc22ea630d3cbedfc0f46",
+    "mime": "image/png",
+    "uploaded_at": "2021-08-21T22:26:04Z",
+    "uploaded_by": "Hlwys",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Oil_lamp_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Oil_lamp_detail.png?a369c",
+    "is_thumbnail": false,
+    "width": 1187,
+    "height": 1393,
+    "size_bytes": 71591,
+    "png_width": 1187,
+    "png_height": 1393,
+    "sha1": "66930d7b0ea4bb00182bc22ea630d3cbedfc0f46",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "2dc01405d19163dcbc5e863222fd986887cdb35b8d00dd27b780ba5286d2a58a",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:20 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "71591",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 04:57:49 GMT",
+      "cache-control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "663751aecafaf51ff5ee0261a25e256b",
+      "x-server": "nginx-7b4ff7c74b-8dkgs",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Server-Timing": "cfEdge;dur=236,cfOrigin;dur=0",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692f8f2e8df343-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-08-21T22:26:04Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Oil lamp detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3AOil+lamp+detail.png%7CFile%3AOil+lamp.png",
+  "imageinfo_response_path": "data/images/Oil_lamp_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:38:17.437603+00:00",
+  "file_fetched_at": "2026-10-07T01:38:20.934069+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Oil_lamp_detail.png). © Jagex Ltd."
+}

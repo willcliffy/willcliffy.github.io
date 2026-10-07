@@ -1,0 +1,95 @@
+{
+  "item": {
+    "page_name": "Adamant gloves",
+    "default_version": "",
+    "release_date": "15 March 2006",
+    "examine": "A pair of nice gloves.",
+    "item_id": [
+      "7459"
+    ],
+    "value": 2500,
+    "image": [
+      "File:Adamant gloves.png"
+    ],
+    "is_members_only": "",
+    "weight": 0.226,
+    "page_name_sub": "Adamant gloves",
+    "high_alchemy_value": 1500,
+    "quest": "No",
+    "item_name": "Adamant gloves"
+  },
+  "file_title": "File:Adamant gloves detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Adamant_gloves_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Adamant_gloves_detail.png?34ecf",
+    "width": 1463,
+    "height": 1428,
+    "size_bytes": 132148,
+    "sha1": "fcecc472849e1f1e3dd97da28a8927eeaa569e10",
+    "mime": "image/png",
+    "uploaded_at": "2021-03-21T03:51:50Z",
+    "uploaded_by": "Spineweilder",
+    "upload_comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]]."
+  },
+  "downloaded": {
+    "path": "data/images/Adamant_gloves_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Adamant_gloves_detail.png?34ecf",
+    "is_thumbnail": false,
+    "width": 1463,
+    "height": 1428,
+    "size_bytes": 132148,
+    "png_width": 1463,
+    "png_height": 1428,
+    "sha1": "fcecc472849e1f1e3dd97da28a8927eeaa569e10",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "c25929106cb191d893f93dcf49b3a0ec78deda95499d17c2efce52e2ce24c57e",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:34 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "132148",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "content-language": "en",
+      "last-modified": "Tue, 28 Feb 2023 04:31:34 GMT",
+      "server-timing": "upstream;dur=61.0",
+      "Server-Timing": "cfEdge;dur=174,cfOrigin;dur=0",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "9d1af6e67789b3edd90c25d2080892e9",
+      "x-server": "nginx-65d7456777-srk7r",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Vary": "accept-encoding",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692fe18f6d9017-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2021-03-21T03:51:50Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Adamant gloves detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3AAdamant+gloves+detail.png%7CFile%3AAdamant+gloves.png",
+  "imageinfo_response_path": "data/images/Adamant_gloves_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:38:30.622287+00:00",
+  "file_fetched_at": "2026-10-07T01:38:34.063148+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Adamant_gloves_detail.png). © Jagex Ltd."
+}

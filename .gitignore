@@ -1,0 +1,4 @@
+# Full wiki Bucket dump (~20 MB). Kept locally; not published.
+data/wiki/
+__pycache__/
+*.tmp

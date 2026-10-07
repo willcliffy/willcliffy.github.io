@@ -1,0 +1,75 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 43825,
+        "ns": 6,
+        "title": "File:Pressure gauge.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-20T15:04:24Z",
+            "user": "Hlwys",
+            "size": 935,
+            "width": 27,
+            "height": 29,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Pressure_gauge.png?e5f4c",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Pressure_gauge.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=43825",
+            "sha1": "028955a5bfd161fb7433646cc47800fe1664297d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-20T15:04:24Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pressure gauge",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      },
+      {
+        "pageid": 120063,
+        "ns": 6,
+        "title": "File:Pressure gauge detail.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "timestamp": "2021-08-21T22:26:54Z",
+            "user": "Hlwys",
+            "size": 241355,
+            "width": 1315,
+            "height": 1463,
+            "comment": "Uploaded with [[RuneScape:Batch Upload|Batch Upload]].",
+            "url": "https://oldschool.runescape.wiki/images/Pressure_gauge_detail.png?8395c",
+            "descriptionurl": "https://oldschool.runescape.wiki/w/File:Pressure_gauge_detail.png",
+            "descriptionshorturl": "https://oldschool.runescape.wiki/index.php?curid=120063",
+            "sha1": "81304a708aec459beaa6e04ea90527f11c544c10",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-21T22:26:54Z",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pressure gauge detail",
+                "source": "mediawiki-metadata"
+              }
+            },
+            "mime": "image/png",
+            "mediatype": "BITMAP",
+            "bitdepth": 8
+          }
+        ]
+      }
+    ]
+  }
+}

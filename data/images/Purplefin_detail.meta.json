@@ -1,0 +1,94 @@
+{
+  "item": {
+    "page_name": "Purplefin",
+    "default_version": "",
+    "release_date": "19 November 2025",
+    "examine": "It's a purplefin! I should get this stuffed!",
+    "item_id": [
+      "31424"
+    ],
+    "weight": 0.7,
+    "value": 6000,
+    "image": [
+      "File:Purplefin.png"
+    ],
+    "is_members_only": "",
+    "league_region": "No",
+    "page_name_sub": "Purplefin",
+    "high_alchemy_value": 3600,
+    "quest": "No",
+    "item_name": "Purplefin"
+  },
+  "file_title": "File:Purplefin detail.png",
+  "is_detail_image": true,
+  "description_url": "https://oldschool.runescape.wiki/w/File:Purplefin_detail.png",
+  "original": {
+    "url": "https://oldschool.runescape.wiki/images/Purplefin_detail.png?9272f",
+    "width": 1511,
+    "height": 1449,
+    "size_bytes": 57584,
+    "sha1": "d117bb0ab42ea49ff124c2ab37490440adff8f39",
+    "mime": "image/png",
+    "uploaded_at": "2025-11-14T04:29:00Z",
+    "uploaded_by": "Riblet15",
+    "upload_comment": ""
+  },
+  "downloaded": {
+    "path": "data/images/Purplefin_detail.png",
+    "url": "https://oldschool.runescape.wiki/images/Purplefin_detail.png?9272f",
+    "is_thumbnail": false,
+    "width": 1511,
+    "height": 1449,
+    "size_bytes": 57584,
+    "png_width": 1511,
+    "png_height": 1449,
+    "sha1": "d117bb0ab42ea49ff124c2ab37490440adff8f39",
+    "sha1_matches_wiki": true,
+    "verification": {
+      "dimensions": true,
+      "sha1": true
+    },
+    "verified": true,
+    "sha256": "c8a433a49fed6034aed9dd3caf2e70a335197df956210baff835d44aaffe7597",
+    "response_headers": {
+      "Date": "Wed, 07 Oct 2026 01:38:14 GMT",
+      "Content-Type": "image/png",
+      "Content-Length": "57584",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline' data:; font-src data:; img-src data: 'self'; media-src data: 'self'; sandbox",
+      "last-modified": "Fri, 14 Nov 2025 04:29:00 GMT",
+      "Cache-Control": "public, max-age=31536000, immutable",
+      "access-control-allow-origin": "*",
+      "x-request-id": "692c7f1786b1b8a47675d3ead2ccdbe5",
+      "x-server": "nginx-5786f46c59-5swll",
+      "via": "1.1 google",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "Server-Timing": "cfEdge;dur=254,cfOrigin;dur=0",
+      "Accept-Ranges": "bytes",
+      "cf-cache-status": "HIT",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "Server": "cloudflare",
+      "CF-RAY": "a4692f657ff9ccc3-BOS"
+    }
+  },
+  "extmetadata": {
+    "DateTime": {
+      "value": "2025-11-14T04:29:00Z",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Purplefin detail",
+      "source": "mediawiki-metadata"
+    }
+  },
+  "imageinfo_query_url": "https://oldschool.runescape.wiki/api.php?action=query&format=json&formatversion=2&maxlag=5&prop=imageinfo&iiprop=timestamp%7Cuser%7Ccomment%7Curl%7Csize%7Csha1%7Cmime%7Cmediatype%7Cbitdepth%7Cextmetadata&titles=File%3APurplefin+detail.png%7CFile%3APurplefin.png",
+  "imageinfo_response_path": "data/images/Purplefin_detail.imageinfo.json",
+  "imageinfo_fetched_at": "2026-10-07T01:38:10.736061+00:00",
+  "file_fetched_at": "2026-10-07T01:38:14.264944+00:00",
+  "user_agent": "osrs-item-guesser-image-fetch/1.0 (OSRS item guessing fan game; contact: <redacted>)",
+  "license": "Image copyright Jagex Ltd., used on the OSRS Wiki with permission; reused under Jagex's Fan Content Policy",
+  "attribution": "Image from the Old School RuneScape Wiki (https://oldschool.runescape.wiki/w/File:Purplefin_detail.png). © Jagex Ltd."
+}
