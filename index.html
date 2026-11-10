@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSRS Progression</title>
+<style>
+  :root { --bg:#f6f3ec; --panel:#fff; --text:#221d16; --muted:#7a7062; --line:#e4ddd0; --accent:#b0791c; --good:#3f8a3a; --bar:#ece5d8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16140f; --panel:#201d17; --text:#eee6d6; --muted:#9d9381; --line:#36312a; --accent:#e0a640; --good:#6fbf66; --bar:#2e2a23; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { margin:0 0 16px; font-size:24px; }
+  form { display:flex; gap:8px; flex-wrap:wrap; }
+  input, select, button { font:inherit; padding:8px 12px; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--text); }
+  input { flex:1; min-width:160px; }
+  button { cursor:pointer; background:var(--accent); color:#fff; border:none; }
+  #recent { margin:8px 0 0; font-size:13px; color:var(--muted); }
+  #recent a { color:var(--accent); margin-right:10px; cursor:pointer; }
+  #status { margin:16px 0; color:var(--muted); }
+  #summary { margin:16px 0; font-size:14px; color:var(--muted); }
+  #summary b { color:var(--text); font-size:20px; display:block; }
+  nav { display:flex; gap:4px; border-bottom:1px solid var(--line); overflow-x:auto; margin-top:8px; }
+  nav button { background:none; color:var(--muted); border-radius:0; border-bottom:2px solid transparent; white-space:nowrap; }
+  nav button.on { color:var(--text); border-bottom-color:var(--accent); }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:0 0 8px 8px; border-top:none; padding:16px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  th, td { padding:6px 8px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; }
+  th { font-size:12px; color:var(--muted); font-weight:600; }
+  .bar { width:120px; height:8px; background:var(--bar); border-radius:4px; overflow:hidden; display:inline-block; vertical-align:middle; margin-left:8px; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  .done { color:var(--good); }
+  .done .bar i { background:var(--good); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+  .card { border:1px solid var(--line); border-radius:8px; padding:12px; }
+  .card h3 { margin:0 0 6px; font-size:15px; display:flex; justify-content:space-between; }
+  .card ul { margin:0; padding:0; list-style:none; font-size:13px; }
+  .muted { color:var(--muted); font-size:13px; }
+  .row { display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+  svg text { fill:var(--muted); font-size:11px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>OSRS Progression</h1>
+  <form id="search"><input id="name" placeholder="Player name" autofocus><button>Look up</button></form>
+  <div id="recent"></div>
+  <div id="status"></div>
+  <div id="result" hidden>
+    <div id="summary"></div>
+    <nav id="tabs"></nav>
+    <section id="view"></section>
+  </div>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
