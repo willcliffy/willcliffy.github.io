@@ -36,6 +36,18 @@
   .card { border:1px solid var(--line); border-radius:8px; padding:12px; }
   .card h3 { margin:0 0 6px; font-size:15px; display:flex; justify-content:space-between; }
   .card ul { margin:0; padding:0; list-style:none; font-size:13px; }
+  .card h3 a, .card li a { color:var(--accent); text-decoration:none; }
+  .card h3 a:hover, .card li a:hover { text-decoration:underline; }
+  .card.next { margin-bottom:12px; }
+  .card.next li { margin:2px 0; }
+  details.tier { border-top:1px solid var(--line); padding:6px 0; font-size:13px; }
+  details.tier summary { cursor:pointer; display:flex; align-items:center; gap:8px; }
+  details.tier summary .bar { margin-left:auto; width:70px; }
+  details.tier .tname { font-weight:600; width:56px; }
+  details.tier ul { margin:6px 0 2px 64px; }
+  details.tier li { margin:2px 0; color:var(--text); }
+  details.tier li.done, details.tier li.muted { color:var(--muted); }
+  details.tier li.done { color:var(--good); }
   .muted { color:var(--muted); font-size:13px; }
   .row { display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
   svg text { fill:var(--muted); font-size:11px; }

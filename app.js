@@ -98,13 +98,48 @@ const VIEWS = {
   },
 
   diaries(el, s) {
-    el.innerHTML = `<p class="muted">Elite-tier skill requirements per region (boostable levels aren't accounted for).</p><div class="grid">
-      ${Object.entries(DIARIES).map(([region, reqs]) => {
-        const items = Object.entries(reqs);
-        const met = items.filter(([k, l]) => s[k].level >= l).length;
-        return `<div class="card"><h3>${region}<span class="${met === items.length ? 'done' : 'muted'}">${met}/${items.length}</span></h3><ul>
-          ${items.map(([k, l]) => `<li class="${s[k].level >= l ? 'done' : ''}">${title(k)}: ${s[k].level}/${l}</li>`).join('')}</ul></div>`;
+    const TIERS = ['easy', 'medium', 'hard', 'elite'];
+    const filter = el.dataset.tier || 'all';
+    const wiki = (page) => `https://oldschool.runescape.wiki/w/${encodeURIComponent(page.replace(/ /g, '_'))}`;
+    // Evaluate every region/tier against the player's levels.
+    const all = Object.entries(DIARIES).flatMap(([region, tiers]) => TIERS.map((tier) => {
+      const t = tiers[tier];
+      const skills = Object.entries(t.skills).map(([k, need]) => {
+        const xp = Math.max(0, s[k].experience);
+        return { k, need, have: s[k].level, left: Math.max(0, XP_TABLE[need] - xp) };
+      }).sort((a, b) => b.left - a.left);
+      const missing = skills.filter((x) => x.have < x.need);
+      const combatOk = !t.combat || player.combatLevel >= t.combat;
+      return { region, tier, t, skills, missing, combatOk, ready: !missing.length && combatOk, xpLeft: missing.reduce((n, x) => n + x.left, 0) };
+    }));
+    const ready = all.filter((x) => x.ready).length;
+    const next = all.filter((x) => !x.ready).sort((a, b) => a.xpLeft - b.xpLeft).slice(0, 5);
+    const shown = filter === 'all' ? TIERS : [filter];
+
+    const tierRow = (x) => {
+      const f = x.skills.length ? (x.skills.length - x.missing.length) / x.skills.length : 1;
+      return `<details class="tier ${x.ready ? 'done' : ''}"><summary><span class="tname">${title(x.tier)}</span>
+          <span>${x.ready ? 'Requirements met' : x.missing.length ? `${x.missing.length} skill${x.missing.length === 1 ? '' : 's'} short` : 'Combat level short'}</span>${bar(f)}</summary>
+        <ul>
+          ${x.missing.map((m) => `<li>${title(m.k)} ${m.have} → ${m.need} <span class="muted">(${fmt(m.left)} XP)</span></li>`).join('')}
+          ${x.t.combat ? `<li class="${x.combatOk ? 'done' : ''}">Combat ${player.combatLevel} / ${x.t.combat}</li>` : ''}
+          ${x.skills.filter((m) => m.have >= m.need).length ? `<li class="done">Met: ${x.skills.filter((m) => m.have >= m.need).map((m) => `${title(m.k)} ${m.need}`).join(', ')}</li>` : ''}
+          ${x.t.quests.length ? `<li class="muted">Quests: ${x.t.quests.map((q) => `<a href="${wiki(q)}" target="_blank" rel="noopener">${esc(q)}</a>`).join(', ')}</li>` : ''}
+        </ul></details>`;
+    };
+
+    el.innerHTML = `
+      <p class="muted">Skill and combat requirements from the OSRS Wiki, including levels needed for each tier's required quests. Quest completion and tasks themselves aren't on the hiscores, so they can't be checked. Many levels are boostable.</p>
+      <div class="row"><b>${ready}/${all.length}</b> tiers have their skill requirements met.
+        <span style="flex:1"></span>Show <select id="tierFilter">${['all', ...TIERS].map((t) => `<option value="${t}" ${t === filter ? 'selected' : ''}>${title(t)}</option>`).join('')}</select></div>
+      ${next.length ? `<div class="card next"><h3>Closest to unlocking</h3><ul>${next.map((x) => `<li>${x.region} ${title(x.tier)}: ${x.missing.map((m) => `${title(m.k)} ${m.need}`).join(', ') || `Combat ${x.t.combat}`}${x.xpLeft ? ` <span class="muted">(${fmt(x.xpLeft)} XP)</span>` : ''}</li>`).join('')}</ul></div>` : ''}
+      <div class="grid">
+      ${Object.keys(DIARIES).map((region) => {
+        const rows = all.filter((x) => x.region === region && shown.includes(x.tier));
+        const done = all.filter((x) => x.region === region && x.ready).length;
+        return `<div class="card"><h3><a href="${wiki(region + ' Diary')}" target="_blank" rel="noopener">${region}</a><span class="${done === 4 ? 'done' : 'muted'}">${done}/4</span></h3>${rows.map(tierRow).join('')}</div>`;
       }).join('')}</div>`;
+    $('tierFilter').onchange = (e) => { el.dataset.tier = e.target.value; VIEWS.diaries(el, s); };
   },
 
   bosses(el) {
