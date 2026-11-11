@@ -1,12 +1,14 @@
-// Requirement data. Entered from memory: verify against the OSRS Wiki.
+// Requirement data. Diaries entered from memory: verify against the OSRS Wiki.
 export const SKILLS = ['attack','defence','strength','hitpoints','ranged','prayer','magic','cooking','woodcutting','fletching','fishing','firemaking','crafting','smithing','mining','herblore','agility','thieving','slayer','farming','runecrafting','hunter','construction','sailing'];
 
 // Highest level each skill needs for all quests (Quest Cape).
+// Source: OSRS Wiki "Quests/Requirements by skill", "All Quests" tab (checked 2026-11-10).
+// Most are boostable; the wiki also lists Combat 85 and 200 quest points, which aren't on the hiscores.
 export const QUEST_CAPE = {
-  attack: 50, defence: 65, strength: 50, hitpoints: 50, ranged: 60, prayer: 50, magic: 75,
-  cooking: 70, woodcutting: 71, fletching: 60, fishing: 62, firemaking: 66, crafting: 70,
-  smithing: 70, mining: 72, herblore: 70, agility: 70, thieving: 60, slayer: 69, farming: 70,
-  runecrafting: 55, hunter: 70, construction: 70,
+  attack: 50, defence: 65, strength: 60, hitpoints: 50, ranged: 62, prayer: 50, magic: 75,
+  cooking: 72, woodcutting: 74, fletching: 70, fishing: 62, firemaking: 75, crafting: 70,
+  smithing: 72, mining: 72, herblore: 70, agility: 70, thieving: 72, slayer: 74, farming: 70,
+  runecrafting: 60, hunter: 70, construction: 70, sailing: 62,
 };
 
 // Elite-tier skill requirements per Achievement Diary region.
